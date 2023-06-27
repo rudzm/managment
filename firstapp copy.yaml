@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: firstapp-main
+  name: simpleapp-apps
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/dev/firstapp/main
+    path: apps/dev/simpleapp
     repoURL: https://github.com/rudzm/managment
     targetRevision: HEAD
   syncPolicy:
