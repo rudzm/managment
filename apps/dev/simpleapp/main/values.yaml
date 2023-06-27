@@ -1,0 +1,40 @@
+app-deployment:
+  replicaCount: 1
+
+  image:
+    repository: europe-central2-docker.pkg.dev/plenti-core-tooling/plenti/simpleapp
+    pullPolicy: Always
+    tag: "0.1.0-main"
+
+  imagePullSecrets: []
+  fullnameOverride: "simpleapp-main"
+
+  podAnnotations: {}
+
+  service:
+    type: NodePort
+    port: 80
+
+  ingress:
+    enabled: true
+    className: ""
+    annotations: {}
+
+    hosts:
+      - host: simpleapp-main.plenti.network
+        paths:
+          - path: /
+            pathType: Exact
+    tls: []
+  
+  iap:
+    enabled: true
+    secretName: supply
+
+  resources:
+    limits:
+      cpu: 250m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 512Mi
