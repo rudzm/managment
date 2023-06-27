@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/supply
+    path: apps/dev/firstapp
     repoURL: https://github.com/rudzm/managment
     targetRevision: HEAD
   syncPolicy:
