@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: apps/dev/firstapp/main
-    repoURL: https://github.com/rudzm/gitops
+    repoURL: https://github.com/rudzm/managment
     targetRevision: HEAD
   syncPolicy:
     automated:
